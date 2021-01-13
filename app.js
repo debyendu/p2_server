@@ -3,6 +3,7 @@ const express = require('express');
 const hbs = require('hbs');
 const data = require('./utils/note-one.js');
 const fetch = require("node-fetch");
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -65,8 +66,8 @@ app.get('*', (req, res) =>{
     res.render('404');
 });
 
-app.listen('3000', () =>{
-    console.log("Running");
+app.listen(port, () =>{
+    console.log("Running: " +port);
 });
 
 
